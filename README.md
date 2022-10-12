@@ -10,8 +10,8 @@
 
 
 
-![](https://github.com/omar178/Emotion-recognition/blob/master/emotions/Happy.PNG)
-![](https://github.com/omar178/Emotion-recognition/blob/master/emotions/angry.PNG)
+![](https://github.com/sachin96Boy/Emotion-recognition/blob/main/emotions/facial-emotion.png)
+
 
 
 
