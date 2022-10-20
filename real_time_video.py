@@ -7,7 +7,8 @@ import numpy as np
 # parameters for loading data and images
 detection_model_path = 'haarcascade_files/haarcascade_frontalface_default.xml'
 # emotion_model_path = 'models/_mini_XCEPTION.102-0.66.hdf5'
-emotion_model_path = 'models/my_model2.hdf5'
+# emotion_model_path = 'models/my_model2.hdf5'
+emotion_model_path = 'models/model.h5'
 
 # hyper-parameters for bounding boxes shape
 # loading models
@@ -49,9 +50,12 @@ while True:
         
         
         preds = emotion_classifier.predict(roi)[0]
-        emotion_probability = np.max(preds)
-        label = EMOTIONS[preds.argmax()]
-    else: continue
+        emotion_probability = np.amax(preds, axis=None)
+        label = EMOTIONS[np.argmax(preds)]
+    else: 
+        preds = [0,0,0,0,0,0,0]
+        emotion_probability = 0.0
+        label = 'none'
 
  
     for (i, (emotion, prob)) in enumerate(zip(EMOTIONS, preds)):
